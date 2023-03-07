@@ -1,0 +1,2165 @@
+@prefix : <http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats> .
+
+<http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ainf.aau.at/ontodebug#axiom
+<http://ainf.aau.at/ontodebug#axiom> rdf:type owl:AnnotationProperty ;
+                                     rdfs:subPropertyOf <http://ainf.aau.at/ontodebug#testCase> .
+
+
+###  http://ainf.aau.at/ontodebug#testCase
+<http://ainf.aau.at/ontodebug#testCase> rdf:type owl:AnnotationProperty .
+
+
+###  http://ainf.aau.at/ontodebug#type
+<http://ainf.aau.at/ontodebug#type> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://ainf.aau.at/ontodebug#testCase> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasAffection
+:hasAffection rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasBehaviouralProperty ;
+              owl:inverseOf :isAffectionOf ;
+              rdfs:domain :Breed ;
+              rdfs:range :Affection .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasAggressiveness
+:hasAggressiveness rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :hasBehaviouralProperty ;
+                   owl:inverseOf :isAggressivenessOf ;
+                   rdfs:domain :Breed ;
+                   rdfs:range :Aggressiveness .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasBehaviouralProperty
+:hasBehaviouralProperty rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        owl:inverseOf :isBehavouralPropertyOf ;
+                        rdfs:domain :Breed ;
+                        rdfs:range :BehaviouralProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasBodyProperty
+:hasBodyProperty rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf :isBodyPropertyOf ;
+                 rdfs:domain :Breed ;
+                 rdfs:range :BodyProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasBodyShape
+:hasBodyShape rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasBodyProperty ;
+              owl:inverseOf :isBodyShapeOf ;
+              rdfs:domain :Breed ;
+              rdfs:range :BodyShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasBreed
+:hasBreed rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :isBreedOf ;
+          rdfs:domain :DomesticCat ;
+          rdfs:range :Breed .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasCoatColour
+:hasCoatColour rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isCoatColourOf ;
+               rdfs:domain :DomesticCat ;
+               rdfs:range :CoatColour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasCoatColourPattern
+:hasCoatColourPattern rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasBodyProperty ;
+                      owl:inverseOf :isCoatColourPatternOf ;
+                      rdfs:domain :Breed ;
+                      rdfs:range :CoatColourPattern .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasCoatType
+:hasCoatType rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasBodyProperty ;
+             owl:inverseOf :isCoatTypeOf ;
+             rdfs:domain :Breed ;
+             rdfs:range :CoatType .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasEarShape
+:hasEarShape rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasBodyProperty ;
+             owl:inverseOf :isEarShapeOf ;
+             rdfs:domain :Breed ;
+             rdfs:range :EarShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasEnvironmentRequirement
+:hasEnvironmentRequirement rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :hasRequirement ;
+                           owl:inverseOf :isEnvironmentRequirementOf ;
+                           rdfs:domain :Breed ;
+                           rdfs:range :Environment .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasExpensesRequirement
+:hasExpensesRequirement rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasRequirement ;
+                        owl:inverseOf :isExpensesRequirementOf ;
+                        rdfs:domain :Breed ;
+                        rdfs:range :Expense .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasEyeColour
+:hasEyeColour rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isEyeColourOf ;
+              rdfs:domain :Breed ;
+              rdfs:range :EyeColour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasEyeColourPattern
+:hasEyeColourPattern rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasBodyProperty ;
+                     owl:inverseOf :isEyeColourPatternOf ;
+                     rdfs:domain :Breed ;
+                     rdfs:range :EyeColourPattern .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasEyeShape
+:hasEyeShape rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasBodyProperty ;
+             owl:inverseOf :isEyeShapeOf ;
+             rdfs:domain :Breed ;
+             rdfs:range :EyeShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasGeneticDisease
+:hasGeneticDisease rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :hasHealthProperty ;
+                   owl:inverseOf :isGeneticDiseaseOf ;
+                   rdfs:domain :Breed ;
+                   rdfs:range :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasGroomingRequirement
+:hasGroomingRequirement rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasRequirement ;
+                        owl:inverseOf :isGroomingRequirementOf ;
+                        rdfs:domain :Breed ;
+                        rdfs:range :Grooming .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasHeadShape
+:hasHeadShape rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasBodyProperty ;
+              owl:inverseOf :isHeadShapeOf ;
+              rdfs:domain :Breed ;
+              rdfs:range :HeadShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasHealthIssue
+:hasHealthIssue rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasHealthProperty ;
+                owl:inverseOf :isHealthIssueOf ;
+                rdfs:domain :Breed ;
+                rdfs:range :HealthIssue .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasHealthProperty
+:hasHealthProperty rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   owl:inverseOf :isHealthPropertyOf ;
+                   rdfs:domain :Breed ;
+                   rdfs:range :HealthProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasPlayfulness
+:hasPlayfulness rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasBehaviouralProperty ;
+                owl:inverseOf :isPlayfulnessOf ;
+                rdfs:domain :Breed ;
+                rdfs:range :Playfulness .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasRequirement
+:hasRequirement rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :isRequirementOf ;
+                rdfs:domain :Breed ;
+                rdfs:range :Requirement .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasTailShape
+:hasTailShape rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasBodyProperty ;
+              owl:inverseOf :isTailShapeOf ;
+              rdfs:domain :Breed ;
+              rdfs:range :TailShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hasToleranceOfPets
+:hasToleranceOfPets rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasBehaviouralProperty ;
+                    owl:inverseOf :isToleranceOfPetsOf ;
+                    rdfs:domain :Breed ;
+                    rdfs:range :ToleranceOfPets .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isAffectionOf
+:isAffectionOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :isBehavouralPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isAggressivenessOf
+:isAggressivenessOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :isBehavouralPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isBehavouralPropertyOf
+:isBehavouralPropertyOf rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isBodyPropertyOf
+:isBodyPropertyOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isBodyShapeOf
+:isBodyShapeOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :isBodyPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isBreedOf
+:isBreedOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isCoatColourOf
+:isCoatColourOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isCoatColourPatternOf
+:isCoatColourPatternOf rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :isBodyPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isCoatTypeOf
+:isCoatTypeOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :isBodyPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isEarShapeOf
+:isEarShapeOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :isBodyPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isEnvironmentRequirementOf
+:isEnvironmentRequirementOf rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :isRequirementOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isExpensesRequirementOf
+:isExpensesRequirementOf rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :isRequirementOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isEyeColourOf
+:isEyeColourOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isEyeColourPatternOf
+:isEyeColourPatternOf rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :isBodyPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isEyeShapeOf
+:isEyeShapeOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :isBodyPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isGeneticDiseaseOf
+:isGeneticDiseaseOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :isHealthPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isGroomingRequirementOf
+:isGroomingRequirementOf rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :isRequirementOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isHeadShapeOf
+:isHeadShapeOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :isBodyPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isHealthIssueOf
+:isHealthIssueOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :isHealthPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isHealthPropertyOf
+:isHealthPropertyOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isPlayfulnessOf
+:isPlayfulnessOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :isBehavouralPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isRequirementOf
+:isRequirementOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isTailShapeOf
+:isTailShapeOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :isBodyPropertyOf .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#isToleranceOfPetsOf
+:isToleranceOfPetsOf rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :isBehavouralPropertyOf .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#price
+:price rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :DomesticCat ;
+       rdfs:range owl:real .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age
+<http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> rdf:type owl:DatatypeProperty ;
+                                                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                                                              rdf:type owl:FunctionalProperty ;
+                                                                              rdfs:domain :DomesticCat ;
+                                                                              rdfs:range [ rdf:type rdfs:Datatype ;
+                                                                                           owl:oneOf [ rdf:type rdf:List ;
+                                                                                                       rdf:first "Adult" ;
+                                                                                                       rdf:rest [ rdf:type rdf:List ;
+                                                                                                                  rdf:first "Junior" ;
+                                                                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                                                                             rdf:first "Kitten" ;
+                                                                                                                             rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                        rdf:first "Mature" ;
+                                                                                                                                        rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                   rdf:first "Senior" ;
+                                                                                                                                                   rdf:rest rdf:nil
+                                                                                                                                                 ]
+                                                                                                                                      ]
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                     ]
+                                                                                         ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender
+<http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                 rdf:type owl:FunctionalProperty ;
+                                                                                 rdfs:domain :DomesticCat ;
+                                                                                 rdfs:range [ rdf:type rdfs:Datatype ;
+                                                                                              owl:oneOf [ rdf:type rdf:List ;
+                                                                                                          rdf:first "Female" ;
+                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                     rdf:first "Male" ;
+                                                                                                                     rdf:rest rdf:nil
+                                                                                                                   ]
+                                                                                                        ]
+                                                                                            ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight
+<http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                 rdf:type owl:FunctionalProperty ;
+                                                                                 rdfs:domain :DomesticCat ;
+                                                                                 rdfs:range owl:real .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Affection
+:Affection rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:unionOf ( :HighAffection
+                                               :LowAffection
+                                               :ModerateAffection
+                                             )
+                               ] ;
+           rdfs:subClassOf :BehaviouralProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Aggressiveness
+:Aggressiveness rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( :HighAggressiveness
+                                                    :LowAggressiveness
+                                                    :ModerateAggressiveness
+                                                  )
+                                    ] ;
+                rdfs:subClassOf :BehaviouralProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#AlmondShapedEyes
+:AlmondShapedEyes rdf:type owl:Class ;
+                  rdfs:subClassOf :EyeShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BehaviouralProperty
+:BehaviouralProperty rdf:type owl:Class ;
+                     rdfs:subClassOf :DomainThing .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BiColour
+:BiColour rdf:type owl:Class ;
+          rdfs:subClassOf :PartiColourPattern ;
+          owl:disjointWith :TriColour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BobTail
+:BobTail rdf:type owl:Class ;
+         rdfs:subClassOf :TailShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BodyProperty
+:BodyProperty rdf:type owl:Class ;
+              rdfs:subClassOf :DomainThing .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BodyShape
+:BodyShape rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:unionOf ( :IntermediateBody
+                                               :SlenderAthleticBody
+                                               :StockyBody
+                                             )
+                               ] ;
+           rdfs:subClassOf :BodyProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Breed
+:Breed rdf:type owl:Class ;
+       rdfs:subClassOf :DomainThing ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAffection ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Affection
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAggressiveness ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Aggressiveness
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasBodyShape ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :BodyShape
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasCoatColourPattern ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :CoatColourPattern
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasCoatType ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :CoatType
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasEarShape ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :EarShape
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasEnvironmentRequirement ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Environment
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasExpensesRequirement ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Expense
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasEyeColourPattern ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :EyeColourPattern
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasEyeShape ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :EyeShape
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGroomingRequirement ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Grooming
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasHeadShape ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :HeadShape
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasPlayfulness ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Playfulness
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasTailShape ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :TailShape
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasToleranceOfPets ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :ToleranceOfPets
+                       ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BritishShorthair
+:BritishShorthair rdf:type owl:Class ;
+                  rdfs:subClassOf :Shorthair ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAffection ;
+                                    owl:allValuesFrom :ModerateAffection
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAggressiveness ;
+                                    owl:allValuesFrom :LowAggressiveness
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasBodyShape ;
+                                    owl:allValuesFrom :IntermediateBody
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasCoatType ;
+                                    owl:allValuesFrom <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#ShortCoated>
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasEarShape ;
+                                    owl:allValuesFrom :RoundedTipsEars
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasEnvironmentRequirement ;
+                                    owl:allValuesFrom :Indoor
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasExpensesRequirement ;
+                                    owl:allValuesFrom :ModerateExpense
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasEyeColourPattern ;
+                                    owl:allValuesFrom :EvenColouredEyes
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasEyeShape ;
+                                    owl:allValuesFrom :RoundEyes
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasGroomingRequirement ;
+                                    owl:allValuesFrom :LowGrooming
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasHeadShape ;
+                                    owl:allValuesFrom :RoundedWedgeFace
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasPlayfulness ;
+                                    owl:allValuesFrom :ModeratePlayfulness
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasTailShape ;
+                                    owl:allValuesFrom :LongTail
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasToleranceOfPets ;
+                                    owl:allValuesFrom :LowTolerance
+                                  ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BritishShorthairBiColour
+:BritishShorthairBiColour rdf:type owl:Class ;
+                          rdfs:subClassOf :BritishShorthair ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasCoatColourPattern ;
+                                            owl:allValuesFrom :BiColour
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasCoatColourPattern ;
+                                            owl:allValuesFrom :PartiColourPattern
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasEyeColour ;
+                                            owl:hasValue :golden
+                                          ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BritishShorthairColourPointed
+:BritishShorthairColourPointed rdf:type owl:Class ;
+                               rdfs:subClassOf :BritishShorthair ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasCoatColourPattern ;
+                                                 owl:allValuesFrom :PointedPattern
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasEyeColour ;
+                                                 owl:hasValue :blue
+                                               ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BritishShorthairSolid
+:BritishShorthairSolid rdf:type owl:Class ;
+                       rdfs:subClassOf :BritishShorthair ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasCoatColourPattern ;
+                                         owl:allValuesFrom :SolidColourPattern
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasEyeColour ;
+                                         owl:hasValue :golden
+                                       ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BritishShorthairTabby
+:BritishShorthairTabby rdf:type owl:Class ;
+                       rdfs:subClassOf :BritishShorthair ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasCoatColourPattern ;
+                                         owl:allValuesFrom :TabbyPattern
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasEyeColour ;
+                                         owl:hasValue :golden
+                                       ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#BritishShorthairTortie
+:BritishShorthairTortie rdf:type owl:Class ;
+                        rdfs:subClassOf :BritishShorthair ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasCoatColourPattern ;
+                                          owl:allValuesFrom :TortieColourPattern
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasEyeColour ;
+                                          owl:hasValue :orange
+                                        ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#CoatColour
+:CoatColour rdf:type owl:Class ;
+            rdfs:subClassOf :Colour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#CoatColourPattern
+:CoatColourPattern rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:unionOf ( :PartiColourPattern
+                                                       :PointedPattern
+                                                       :SolidColourPattern
+                                                       :TabbyPattern
+                                                       :TortieColourPattern
+                                                     )
+                                       ] ;
+                   rdfs:subClassOf :BodyProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#CoatType
+:CoatType rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:unionOf ( :Hairless
+                                              <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#CurlyCoated>
+                                              <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#LongCoated>
+                                              <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#ShortCoated>
+                                            )
+                              ] ;
+          rdfs:subClassOf :BodyProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Colour
+:Colour rdf:type owl:Class ;
+        rdfs:subClassOf :DomainThing .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#CurledEars
+:CurledEars rdf:type owl:Class ;
+            rdfs:subClassOf :EarShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#DomainThing
+:DomainThing rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#DomesticCat
+:DomesticCat rdf:type owl:Class ;
+             rdfs:subClassOf :DomainThing ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasCoatColour ;
+                               owl:someValuesFrom :CoatColour
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasBreed ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Breed
+                             ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Donskoy
+:Donskoy rdf:type owl:Class ;
+         rdfs:subClassOf :Shorthair ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAffection ;
+                           owl:allValuesFrom :HighAffection
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAggressiveness ;
+                           owl:allValuesFrom :LowAggressiveness
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasBodyShape ;
+                           owl:allValuesFrom :SlenderAthleticBody
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasCoatColourPattern ;
+                           owl:allValuesFrom :SolidColourPattern
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasCoatType ;
+                           owl:allValuesFrom :Hairless
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEarShape ;
+                           owl:allValuesFrom :PointedTipsEars
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEnvironmentRequirement ;
+                           owl:allValuesFrom :Indoor
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasExpensesRequirement ;
+                           owl:allValuesFrom :LowExpense
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEyeColourPattern ;
+                           owl:allValuesFrom :EvenColouredEyes
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEyeShape ;
+                           owl:allValuesFrom :SlantedEyes
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGroomingRequirement ;
+                           owl:allValuesFrom :LowGrooming
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasHeadShape ;
+                           owl:allValuesFrom :LongWedgeFace
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPlayfulness ;
+                           owl:allValuesFrom :HighPlayfulness
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasTailShape ;
+                           owl:allValuesFrom :LongTail
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasToleranceOfPets ;
+                           owl:allValuesFrom :HighTolerance
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEyeColour ;
+                           owl:hasValue :green
+                         ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#EarShape
+:EarShape rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:unionOf ( :CurledEars
+                                              :FoldedEars
+                                              :PointedTipsEars
+                                              :RoundedTipsEars
+                                            )
+                              ] ;
+          rdfs:subClassOf :BodyProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Environment
+:Environment rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:unionOf ( :Indoor
+                                                 :Outdoor
+                                               )
+                                 ] ;
+             rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#EvenColouredEyes
+:EvenColouredEyes rdf:type owl:Class ;
+                  rdfs:subClassOf :EyeColourPattern ;
+                  owl:disjointWith :OddColouredEyes .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Expense
+:Expense rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:unionOf ( :HighExpense
+                                             :LowExpense
+                                             :ModerateExpense
+                                           )
+                             ] ;
+         rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#EyeColour
+:EyeColour rdf:type owl:Class ;
+           rdfs:subClassOf :Colour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#EyeColourPattern
+:EyeColourPattern rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :EvenColouredEyes
+                                                      :OddColouredEyes
+                                                    )
+                                      ] ;
+                  rdfs:subClassOf :BodyProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#EyeShape
+:EyeShape rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:unionOf ( :AlmondShapedEyes
+                                              :RoundEyes
+                                              :SlantedEyes
+                                            )
+                              ] ;
+          rdfs:subClassOf :BodyProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#FoldedEars
+:FoldedEars rdf:type owl:Class ;
+            rdfs:subClassOf :EarShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#GeneticDisease
+:GeneticDisease rdf:type owl:Class ;
+                rdfs:subClassOf :HealthProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Grooming
+:Grooming rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:unionOf ( :HighGrooming
+                                              :LowGrooming
+                                              :ModerateGrooming
+                                            )
+                              ] ;
+          rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Hairless
+:Hairless rdf:type owl:Class ;
+          rdfs:subClassOf :CoatType .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#HeadShape
+:HeadShape rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:unionOf ( :LongWedgeFace
+                                               :RoundedFlatFace
+                                               :RoundedWedgeFace
+                                             )
+                               ] ;
+           rdfs:subClassOf :BodyProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#HealthIssue
+:HealthIssue rdf:type owl:Class ;
+             rdfs:subClassOf :HealthProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#HealthProperty
+:HealthProperty rdf:type owl:Class ;
+                rdfs:subClassOf :DomainThing .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#HighAffection
+:HighAffection rdf:type owl:Class ;
+               rdfs:subClassOf :Affection .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#HighAggressiveness
+:HighAggressiveness rdf:type owl:Class ;
+                    rdfs:subClassOf :Aggressiveness .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#HighExpense
+:HighExpense rdf:type owl:Class ;
+             rdfs:subClassOf :Expense .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#HighGrooming
+:HighGrooming rdf:type owl:Class ;
+              rdfs:subClassOf :Grooming .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#HighPlayfulness
+:HighPlayfulness rdf:type owl:Class ;
+                 rdfs:subClassOf :Playfulness .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#HighTolerance
+:HighTolerance rdf:type owl:Class ;
+               rdfs:subClassOf :ToleranceOfPets .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Indoor
+:Indoor rdf:type owl:Class ;
+        rdfs:subClassOf :Environment ;
+        owl:disjointWith :Outdoor .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#IntermediateBody
+:IntermediateBody rdf:type owl:Class ;
+                  rdfs:subClassOf :BodyShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#LongTail
+:LongTail rdf:type owl:Class ;
+          rdfs:subClassOf :TailShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#LongWedgeFace
+:LongWedgeFace rdf:type owl:Class ;
+               rdfs:subClassOf :HeadShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Longhair
+:Longhair rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Breed
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasCoatType ;
+                                                       owl:allValuesFrom <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#LongCoated>
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :Breed .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#LowAffection
+:LowAffection rdf:type owl:Class ;
+              rdfs:subClassOf :Affection .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#LowAggressiveness
+:LowAggressiveness rdf:type owl:Class ;
+                   rdfs:subClassOf :Aggressiveness .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#LowExpense
+:LowExpense rdf:type owl:Class ;
+            rdfs:subClassOf :Expense .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#LowGrooming
+:LowGrooming rdf:type owl:Class ;
+             rdfs:subClassOf :Grooming .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#LowPlayfulness
+:LowPlayfulness rdf:type owl:Class ;
+                rdfs:subClassOf :Playfulness .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#LowTolerance
+:LowTolerance rdf:type owl:Class ;
+              rdfs:subClassOf :ToleranceOfPets .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#MaineCoon
+:MaineCoon rdf:type owl:Class ;
+           rdfs:subClassOf :Longhair ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasEyeColourPattern ;
+                             owl:someValuesFrom :EvenColouredEyes
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAffection ;
+                             owl:allValuesFrom :HighAffection
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAggressiveness ;
+                             owl:allValuesFrom :LowAggressiveness
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasBodyShape ;
+                             owl:allValuesFrom :SlenderAthleticBody
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasCoatColourPattern ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :PartiColourPattern
+                                                               :SolidColourPattern
+                                                               :TabbyPattern
+                                                               :TortieColourPattern
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasEarShape ;
+                             owl:allValuesFrom :RoundedTipsEars
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasEnvironmentRequirement ;
+                             owl:allValuesFrom :Outdoor
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasExpensesRequirement ;
+                             owl:allValuesFrom :HighExpense
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasEyeShape ;
+                             owl:allValuesFrom :SlantedEyes
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasGroomingRequirement ;
+                             owl:allValuesFrom :HighGrooming
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasHeadShape ;
+                             owl:allValuesFrom :RoundedWedgeFace
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasPlayfulness ;
+                             owl:allValuesFrom :HighPlayfulness
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTailShape ;
+                             owl:allValuesFrom :LongTail
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasToleranceOfPets ;
+                             owl:allValuesFrom :HighTolerance
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasEyeColour ;
+                             owl:hasValue :copper
+                           ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#MaineCoonBiColour
+:MaineCoonBiColour rdf:type owl:Class ;
+                   rdfs:subClassOf :MaineCoon ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasCoatColourPattern ;
+                                     owl:allValuesFrom :BiColour
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasCoatColourPattern ;
+                                     owl:allValuesFrom :PartiColourPattern
+                                   ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#MaineCoonSolid
+:MaineCoonSolid rdf:type owl:Class ;
+                rdfs:subClassOf :MaineCoon ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasCoatColourPattern ;
+                                  owl:allValuesFrom :SolidColourPattern
+                                ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#MaineCoonTabby
+:MaineCoonTabby rdf:type owl:Class ;
+                rdfs:subClassOf :MaineCoon ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasCoatColourPattern ;
+                                  owl:allValuesFrom :TabbyPattern
+                                ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#MaineCoonTortie
+:MaineCoonTortie rdf:type owl:Class ;
+                 rdfs:subClassOf :MaineCoon ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasCoatColourPattern ;
+                                   owl:allValuesFrom :TortieColourPattern
+                                 ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#ModerateAffection
+:ModerateAffection rdf:type owl:Class ;
+                   rdfs:subClassOf :Affection .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#ModerateAggressiveness
+:ModerateAggressiveness rdf:type owl:Class ;
+                        rdfs:subClassOf :Aggressiveness .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#ModerateExpense
+:ModerateExpense rdf:type owl:Class ;
+                 rdfs:subClassOf :Expense .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#ModerateGrooming
+:ModerateGrooming rdf:type owl:Class ;
+                  rdfs:subClassOf :Grooming .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#ModeratePlayfulness
+:ModeratePlayfulness rdf:type owl:Class ;
+                     rdfs:subClassOf :Playfulness .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#ModerateTolerance
+:ModerateTolerance rdf:type owl:Class ;
+                   rdfs:subClassOf :ToleranceOfPets .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#OddColouredEyes
+:OddColouredEyes rdf:type owl:Class ;
+                 rdfs:subClassOf :EyeColourPattern .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Outdoor
+:Outdoor rdf:type owl:Class ;
+         rdfs:subClassOf :Environment .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#PartiColourPattern
+:PartiColourPattern rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Class ;
+                                          owl:unionOf ( :BiColour
+                                                        :TriColour
+                                                      )
+                                        ] ;
+                    rdfs:subClassOf :CoatColourPattern .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Persian
+:Persian rdf:type owl:Class ;
+         rdfs:subClassOf :Longhair ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAffection ;
+                           owl:allValuesFrom :HighAffection
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAggressiveness ;
+                           owl:allValuesFrom :LowAggressiveness
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasBodyShape ;
+                           owl:allValuesFrom :StockyBody
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasCoatColourPattern ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :PartiColourPattern
+                                                             :PointedPattern
+                                                             :SolidColourPattern
+                                                             :TabbyPattern
+                                                             :TortieColourPattern
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEarShape ;
+                           owl:allValuesFrom :RoundedTipsEars
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEnvironmentRequirement ;
+                           owl:allValuesFrom :Indoor
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasExpensesRequirement ;
+                           owl:allValuesFrom :HighExpense
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEyeColourPattern ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :EvenColouredEyes
+                                                             :OddColouredEyes
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEyeShape ;
+                           owl:allValuesFrom :RoundEyes
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGroomingRequirement ;
+                           owl:allValuesFrom :HighGrooming
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasHeadShape ;
+                           owl:allValuesFrom :RoundedFlatFace
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPlayfulness ;
+                           owl:allValuesFrom :LowPlayfulness
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasTailShape ;
+                           owl:allValuesFrom :LongTail
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasToleranceOfPets ;
+                           owl:allValuesFrom :HighTolerance
+                         ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#PersianBlueAndOddEyedBiColour
+:PersianBlueAndOddEyedBiColour rdf:type owl:Class ;
+                               rdfs:subClassOf :Persian ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasCoatColourPattern ;
+                                                 owl:allValuesFrom :BiColour
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasCoatColourPattern ;
+                                                 owl:allValuesFrom :PartiColourPattern
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasEyeColourPattern ;
+                                                 owl:allValuesFrom :OddColouredEyes
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasEyeColour ;
+                                                 owl:hasValue :blue
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasEyeColour ;
+                                                 owl:hasValue :copper
+                                               ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#PersianSilverTabby
+:PersianSilverTabby rdf:type owl:Class ;
+                    rdfs:subClassOf :Persian ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasCoatColourPattern ;
+                                      owl:allValuesFrom :TabbyPattern
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasEyeColourPattern ;
+                                      owl:allValuesFrom :EvenColouredEyes
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasEyeColour ;
+                                      owl:hasValue :green
+                                    ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#PersianSolid
+:PersianSolid rdf:type owl:Class ;
+              rdfs:subClassOf :Persian ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasCoatColourPattern ;
+                                owl:allValuesFrom :SolidColourPattern
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasEyeColourPattern ;
+                                owl:allValuesFrom :EvenColouredEyes
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasEyeColour ;
+                                owl:hasValue :orange
+                              ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#PersianTortie
+:PersianTortie rdf:type owl:Class ;
+               rdfs:subClassOf :Persian ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasCoatColourPattern ;
+                                 owl:allValuesFrom :TortieColourPattern
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasEyeColourPattern ;
+                                 owl:allValuesFrom :EvenColouredEyes
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasEyeColour ;
+                                 owl:hasValue :copper
+                               ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Pixiebob
+:Pixiebob rdf:type owl:Class ;
+          rdfs:subClassOf :Shorthair ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAffection ;
+                            owl:allValuesFrom :HighAffection
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAggressiveness ;
+                            owl:allValuesFrom :LowAggressiveness
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasBodyShape ;
+                            owl:allValuesFrom :StockyBody
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCoatColourPattern ;
+                            owl:allValuesFrom :TabbyPattern
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCoatType ;
+                            owl:allValuesFrom <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#ShortCoated>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEarShape ;
+                            owl:allValuesFrom :PointedTipsEars
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEnvironmentRequirement ;
+                            owl:allValuesFrom :Indoor
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasExpensesRequirement ;
+                            owl:allValuesFrom :ModerateExpense
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEyeColourPattern ;
+                            owl:allValuesFrom :EvenColouredEyes
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEyeShape ;
+                            owl:allValuesFrom :AlmondShapedEyes
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGroomingRequirement ;
+                            owl:allValuesFrom :LowGrooming
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHeadShape ;
+                            owl:allValuesFrom :RoundedWedgeFace
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPlayfulness ;
+                            owl:allValuesFrom :HighPlayfulness
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTailShape ;
+                            owl:allValuesFrom :BobTail
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasToleranceOfPets ;
+                            owl:allValuesFrom :HighTolerance
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEyeColour ;
+                            owl:hasValue :yellow_green
+                          ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Playfulness
+:Playfulness rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:unionOf ( :HighPlayfulness
+                                                 :LowPlayfulness
+                                                 :ModeratePlayfulness
+                                               )
+                                 ] ;
+             rdfs:subClassOf :BehaviouralProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#PointedPattern
+:PointedPattern rdf:type owl:Class ;
+                rdfs:subClassOf :CoatColourPattern .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#PointedTipsEars
+:PointedTipsEars rdf:type owl:Class ;
+                 rdfs:subClassOf :EarShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Requirement
+:Requirement rdf:type owl:Class ;
+             rdfs:subClassOf :DomainThing .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#RingTail
+:RingTail rdf:type owl:Class ;
+          rdfs:subClassOf :TailShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#RoundEyes
+:RoundEyes rdf:type owl:Class ;
+           rdfs:subClassOf :EyeShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#RoundedFlatFace
+:RoundedFlatFace rdf:type owl:Class ;
+                 rdfs:subClassOf :HeadShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#RoundedTipsEars
+:RoundedTipsEars rdf:type owl:Class ;
+                 rdfs:subClassOf :EarShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#RoundedWedgeFace
+:RoundedWedgeFace rdf:type owl:Class ;
+                  rdfs:subClassOf :HeadShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Shorthair
+:Shorthair rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Breed
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasCoatType ;
+                                                        owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                            owl:unionOf ( :Hairless
+                                                                                          <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#CurlyCoated>
+                                                                                          <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#ShortCoated>
+                                                                                        )
+                                                                          ]
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :Breed .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#SlantedEyes
+:SlantedEyes rdf:type owl:Class ;
+             rdfs:subClassOf :EyeShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#SlenderAthleticBody
+:SlenderAthleticBody rdf:type owl:Class ;
+                     rdfs:subClassOf :BodyShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#SolidColourPattern
+:SolidColourPattern rdf:type owl:Class ;
+                    rdfs:subClassOf :CoatColourPattern .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#StockyBody
+:StockyBody rdf:type owl:Class ;
+            rdfs:subClassOf :BodyShape .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#TabbyPattern
+:TabbyPattern rdf:type owl:Class ;
+              rdfs:subClassOf :CoatColourPattern .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#TailShape
+:TailShape rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:unionOf ( :BobTail
+                                               :LongTail
+                                               :RingTail
+                                             )
+                               ] ;
+           rdfs:subClassOf :BodyProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#Tiffanie
+:Tiffanie rdf:type owl:Class ;
+          rdfs:subClassOf :Longhair ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAffection ;
+                            owl:allValuesFrom :HighAffection
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAggressiveness ;
+                            owl:allValuesFrom :LowAggressiveness
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasBodyShape ;
+                            owl:allValuesFrom :IntermediateBody
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCoatColourPattern ;
+                            owl:allValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :SolidColourPattern
+                                                              :TabbyPattern
+                                                              :TortieColourPattern
+                                                            )
+                                              ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEarShape ;
+                            owl:allValuesFrom :RoundedTipsEars
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEnvironmentRequirement ;
+                            owl:allValuesFrom :Outdoor
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasExpensesRequirement ;
+                            owl:allValuesFrom :ModerateExpense
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEyeColourPattern ;
+                            owl:allValuesFrom :EvenColouredEyes
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEyeShape ;
+                            owl:allValuesFrom :SlantedEyes
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGroomingRequirement ;
+                            owl:allValuesFrom :ModerateGrooming
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHeadShape ;
+                            owl:allValuesFrom :RoundedWedgeFace
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPlayfulness ;
+                            owl:allValuesFrom :HighPlayfulness
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTailShape ;
+                            owl:allValuesFrom :LongTail
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasToleranceOfPets ;
+                            owl:allValuesFrom :HighTolerance
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEyeColour ;
+                            owl:hasValue :yellow_green
+                          ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#TiffanieSolid
+:TiffanieSolid rdf:type owl:Class ;
+               rdfs:subClassOf :Tiffanie ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasCoatColourPattern ;
+                                 owl:allValuesFrom :SolidColourPattern
+                               ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#TiffanieTabby
+:TiffanieTabby rdf:type owl:Class ;
+               rdfs:subClassOf :Tiffanie ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasCoatColourPattern ;
+                                 owl:allValuesFrom :TabbyPattern
+                               ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#TiffanieTortie
+:TiffanieTortie rdf:type owl:Class ;
+                rdfs:subClassOf :Tiffanie ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasCoatColourPattern ;
+                                  owl:allValuesFrom :TortieColourPattern
+                                ] .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#ToleranceOfPets
+:ToleranceOfPets rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:unionOf ( :HighTolerance
+                                                     :LowTolerance
+                                                     :ModerateTolerance
+                                                   )
+                                     ] ;
+                 rdfs:subClassOf :BehaviouralProperty .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#TortieColourPattern
+:TortieColourPattern rdf:type owl:Class ;
+                     rdfs:subClassOf :CoatColourPattern .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#TriColour
+:TriColour rdf:type owl:Class ;
+           rdfs:subClassOf :PartiColourPattern .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#CurlyCoated
+<http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#CurlyCoated> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf :CoatType .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#LongCoated
+<http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#LongCoated> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf :CoatType .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#ShortCoated
+<http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#ShortCoated> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf :CoatType .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#black
+:black rdf:type owl:NamedIndividual ,
+                :CoatColour ,
+                :Colour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#blue
+:blue rdf:type owl:NamedIndividual ,
+               :Colour ,
+               :EyeColour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#brown
+:brown rdf:type owl:NamedIndividual ,
+                :CoatColour ,
+                :Colour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#burmese_head_defect
+:burmese_head_defect rdf:type owl:NamedIndividual ,
+                              :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat001
+:cat001 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :MaineCoonBiColour
+                 ] ;
+        :hasCoatColour :black ,
+                       :white ;
+        :price 25000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Kitten" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Male" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 2.65 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat002
+:cat002 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :MaineCoonSolid
+                 ] ;
+        :hasCoatColour :copper ;
+        :price 10000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Adult" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 8 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat003
+:cat003 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :MaineCoonTabby
+                 ] ;
+        :hasCoatColour :orange ,
+                       :white ;
+        :price 15000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Kitten" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Male" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 5.00 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat004
+:cat004 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :MaineCoonBiColour
+                 ] ;
+        :hasCoatColour :black ,
+                       :white ;
+        :price 14000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Adult" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 6.84 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat005
+:cat005 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :MaineCoonTortie
+                 ] ;
+        :hasCoatColour :black ,
+                       :brown ,
+                       :golden ;
+        :price 8000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Senior" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Male" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 10.5 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat006
+:cat006 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :PersianBlueAndOddEyedBiColour
+                 ] ;
+        :hasCoatColour :brown ,
+                       :white ;
+        :price 20000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Adult" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 9.85 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat007
+:cat007 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :PersianSilverTabby
+                 ] ;
+        :hasCoatColour :grey ,
+                       :white ;
+        :price 25000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Kitten" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 4.8 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat008
+:cat008 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :PersianSolid
+                 ] ;
+        :hasCoatColour :white ;
+        :price 17500.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Mature" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Male" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 5.65 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat009
+:cat009 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :PersianTortie
+                 ] ;
+        :hasCoatColour :black ,
+                       :brown ;
+        :price 13500.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Adult" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 6.75 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat010
+:cat010 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :TiffanieSolid
+                 ] ;
+        :hasCoatColour :black ;
+        :price 28000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Kitten" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 2.75 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat011
+:cat011 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :TiffanieTabby
+                 ] ;
+        :hasCoatColour :black ,
+                       :copper ,
+                       :white ;
+        :price 22000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Junior" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Male" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 4.56 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat012
+:cat012 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :TiffanieTortie
+                 ] ;
+        :hasCoatColour :black ,
+                       :golden_brown ;
+        :price 9500.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Senior" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Male" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 7.52 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat013
+:cat013 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :BritishShorthairBiColour
+                 ] ;
+        :hasCoatColour :grey ,
+                       :white ;
+        :price 22500.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Junior" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 4 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat014
+:cat014 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :BritishShorthairColourPointed
+                 ] ;
+        :hasCoatColour :grey ,
+                       :white ;
+        :price 15000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Adult" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 6.95 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat015
+:cat015 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :BritishShorthairSolid
+                 ] ;
+        :hasCoatColour :orange ;
+        :price 13650.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Senior" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Male" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 9.24 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat016
+:cat016 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :BritishShorthairTabby
+                 ] ;
+        :hasCoatColour :black ,
+                       :copper ;
+        :price 30000.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Kitten" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 2.05 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat017
+:cat017 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :BritishShorthairTortie
+                 ] ;
+        :hasCoatColour :golden_brown ,
+                       :white ;
+        :price 26500.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Junior" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Male" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 70 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat018
+:cat018 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :Donskoy
+                 ] ;
+        :hasCoatColour :grey ;
+        :price 8500.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Senior" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 10.25 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat019
+:cat019 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :Pixiebob
+                 ] ;
+        :hasCoatColour :black ,
+                       :orange ;
+        :price 28500.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Kitten" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Male" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 2.36 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#cat020
+:cat020 rdf:type owl:NamedIndividual ,
+                 :DomesticCat ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :hasBreed ;
+                   owl:allValuesFrom :Pixiebob
+                 ] ;
+        :hasCoatColour :black ,
+                       :copper ;
+        :price 25350.00 ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#age> "Junior" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#gender> "Female" ;
+        <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#weight> 4.52 .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#copper
+:copper rdf:type owl:NamedIndividual ,
+                 :CoatColour ,
+                 :Colour ,
+                 :EyeColour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#deafness
+:deafness rdf:type owl:NamedIndividual ,
+                   :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#eye_problem
+:eye_problem rdf:type owl:NamedIndividual ,
+                      :HealthIssue .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#feline_lower_urinary_tract_disease
+:feline_lower_urinary_tract_disease rdf:type owl:NamedIndividual ,
+                                             :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#golden
+:golden rdf:type owl:NamedIndividual ,
+                 :CoatColour ,
+                 :Colour ,
+                 :EyeColour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#golden_brown
+:golden_brown rdf:type owl:NamedIndividual ,
+                       :CoatColour ,
+                       :Colour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#green
+:green rdf:type owl:NamedIndividual ,
+                :Colour ,
+                :EyeColour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#grey
+:grey rdf:type owl:NamedIndividual ,
+               :CoatColour ,
+               :Colour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#hypertrophic_cardiomyopathy
+:hypertrophic_cardiomyopathy rdf:type owl:NamedIndividual ,
+                                      :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#inflammatory_bowel_disease
+:inflammatory_bowel_disease rdf:type owl:NamedIndividual ,
+                                     :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#manx_syndrome
+:manx_syndrome rdf:type owl:NamedIndividual ,
+                        :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#orange
+:orange rdf:type owl:NamedIndividual ,
+                 :CoatColour ,
+                 :Colour ,
+                 :EyeColour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#polycystic_kidney_disease
+:polycystic_kidney_disease rdf:type owl:NamedIndividual ,
+                                    :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#progressive_retinal_atrophy
+:progressive_retinal_atrophy rdf:type owl:NamedIndividual ,
+                                      :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#respiratory_problem
+:respiratory_problem rdf:type owl:NamedIndividual ,
+                              :HealthIssue .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#scottish_fold_disease
+:scottish_fold_disease rdf:type owl:NamedIndividual ,
+                                :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#type_2_diabetes
+:type_2_diabetes rdf:type owl:NamedIndividual ,
+                          :GeneticDisease .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#white
+:white rdf:type owl:NamedIndividual ,
+                :CoatColour ,
+                :Colour .
+
+
+###  http://www.semanticweb.org/vimuk/ontologies/2022/11/domestic-cats#yellow_green
+:yellow_green rdf:type owl:NamedIndividual ,
+                       :Colour ,
+                       :EyeColour .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AlmondShapedEyes
+                :RoundEyes
+                :SlantedEyes
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BobTail
+                :LongTail
+                :RingTail
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CurledEars
+                :FoldedEars
+                :PointedTipsEars
+                :RoundedTipsEars
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Hairless
+                <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#CurlyCoated>
+                <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#LongCoated>
+                <http://www.semanticweb.org/vimuk/ontologies/2022/11/untitled-ontology-8#ShortCoated>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HighAffection
+                :LowAffection
+                :ModerateAffection
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HighAggressiveness
+                :LowAggressiveness
+                :ModerateAggressiveness
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HighExpense
+                :LowExpense
+                :ModerateExpense
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HighGrooming
+                :LowGrooming
+                :ModerateGrooming
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HighPlayfulness
+                :LowPlayfulness
+                :ModeratePlayfulness
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :HighTolerance
+                :LowTolerance
+                :ModerateTolerance
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :IntermediateBody
+                :SlenderAthleticBody
+                :StockyBody
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :LongWedgeFace
+                :RoundedFlatFace
+                :RoundedWedgeFace
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :PartiColourPattern
+                :PointedPattern
+                :SolidColourPattern
+                :TabbyPattern
+                :TortieColourPattern
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
